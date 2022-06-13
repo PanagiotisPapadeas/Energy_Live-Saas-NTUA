@@ -1,0 +1,155 @@
+@charset "ISO-8859-1";
+
+h1 {
+	text-align: center;
+	color: darkblue;
+}
+
+p { 
+	text-align: center; 
+	color: darkred;
+}
+
+form {
+	border: 1px dashed black;
+	padding: 20px 0px;
+	margin: 20px 0px; 
+}
+
+.logintable {
+	width:100px; 
+	padding: 20px 30px; 
+	text-align: center; 
+	margin: 5px; 
+	margin-left:auto; 
+	margin-right:auto; 
+}
+
+.logintable1 {
+	background-color: lightgrey;
+	width:700px; 
+	padding: 20px 30px; 
+	text-align: center; 
+	margin: 5px; 
+	margin-left:auto; 
+	margin-right:auto; 
+	border: 2px solid gray; 
+	border-radius: 15px;
+}
+
+.logintable2 {
+	width:100px; 
+	padding: 20px 30px; 
+	text-align: center; 
+	margin: 5px; 
+	margin-left:auto; 
+	margin-right:auto; 
+}
+
+th, td { 
+	text-align: left; 
+	padding: 5px; 
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+th {
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+input {
+	padding: 5px 10px; 
+	border-radius: 5px; 
+	font-size: 1.3em;
+}
+
+#checkData {
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	padding: 5px; 
+	background-color: lightgray;
+}
+
+#checkData:hover {
+	cursor: pointer;
+	background-color: lightgreen;
+}
+#extend {
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	padding: 5px; 
+	background-color: lightgray;
+}
+
+#extend:hover {
+	cursor: pointer;
+	background-color: lightgreen;
+}
+#cancel {
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	padding: 5px; 
+	background-color: lightgray;
+}
+
+#cancel:hover {
+	cursor: pointer;
+	background-color: lightgreen;
+}
+
+.checkOutput {
+	min-width: 150px;
+	font-weight: bold;
+}
+#back {
+	text-align: center;
+}
+
+#daysleft {
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	padding: 5px; 
+	background-color: white;
+}
+
+ /* Dropdown Button */
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;} 

@@ -7,7 +7,16 @@
     font-size: 50px;
 }
 
+
 body{
     background: url(energy.jpg);
     background-size: cover;
 }
+
+/* .g-signin2{
+    width: 100%;
+  }
+  
+  .g-signin2 > div{
+    margin: 0 auto;
+  } */

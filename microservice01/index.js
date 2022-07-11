@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 
-//port 4002
-app.listen(4002, function () {
-console.log("listening on 4002");
+//port 4003
+app.listen(4003, function () {
+console.log("listening on 4003");
 });
 
 app.get("/", (req, res) => {
@@ -13,16 +13,16 @@ app.get("/", (req, res) => {
 		host: "localhost",
 		user: "root",
 		password: "panoplos",
-		database:"saasdb2"
+		database:"saasdb1"
 	});
 
     var test = {
         "status":"OK",
-    "dbconnection":"database saasdb2 connected"
+    "dbconnection":"database saasdb1 connected"
 }
 var test2 = {
     "status":"failed",
-    "dbconnection":"database saasdb2 not connected"
+    "dbconnection":"database saasdb1 not connected"
 }
      
 //check if connection was successful
@@ -36,29 +36,30 @@ con.connect(function(err) {
 });
 });
 
-app.get("/totalload/:country_name/:date_from/:date_to", (req, res) => {
+app.get("/generation/:country_name/:generation_type/:date_from/:date_to", (req, res) => {
     var mysql = require('mysql');
     //const converter = require('json-2-csv');
     var con = mysql.createConnection({
 		host: "localhost",
 		user: "root",
 		password: "panoplos",
-		database:"saasdb2"
+		database:"saasdb1"
 	});
         
 	//JSON object to return
     var test = { 
 
 	};
-    test.quantity = "Actual total load";
+    test.quantity = "Generation per type";
     test.country_name = req.params.country_name;
+    test.generation_type = req.params.generation_type;
 
 
 	con.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		//query to get actual total load from given country and dates
-		let myquery="SELECT TotalLoadValue, UpdateTime from actual_load, country WHERE actual_load.MapCode = country.MapCode and Name="+"'"+req.params.country_name+"'"+" and DateTime >="+"'"+req.params.date_from+"'"+" and DateTime <="+"'"+req.params.date_to+"'";
+		//query to get charges by data given opID and dates
+		let myquery="SELECT ActualGenerationOutput, UpdateTime from aggregated_generation, country WHERE aggregated_generation.MapCode = country.MapCode and Name="+"'"+req.params.country_name+"'"+" and ProductionTypeName="+"'"+req.params.generation_type+"'"+" and DateTime >="+"'"+req.params.date_from+"'"+" and DateTime <="+"'"+req.params.date_to+"'";
 		con.query(myquery, function (err, result, fields){
 			if (err) throw err;
             test.list = result;

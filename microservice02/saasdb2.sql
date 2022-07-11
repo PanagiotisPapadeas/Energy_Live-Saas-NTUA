@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 07, 2022 at 04:59 PM
+-- Generation Time: Jul 11, 2022 at 05:56 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,22 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Actual_Load` (
-  `DateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `ID` int(11) NOT NULL,
+  `DateTime` datetime NOT NULL,
   `MapCode` varchar(30) NOT NULL,
-  `ResolutionCode` varchar(255) NOT NULL,
+  `CountryName` varchar(50) NOT NULL,
+  `ResolutionCode` varchar(30) NOT NULL,
   `TotalLoadValue` float NOT NULL,
-  `UpdateTime` datetime DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Country`
---
-
-CREATE TABLE `Country` (
-  `MapCode` varchar(30) NOT NULL,
-  `Name` varchar(255) DEFAULT NULL
+  `UpdateTime` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -54,24 +45,17 @@ CREATE TABLE `Country` (
 -- Indexes for table `Actual_Load`
 --
 ALTER TABLE `Actual_Load`
-  ADD PRIMARY KEY (`DateTime`,`MapCode`),
-  ADD KEY `MapCodeConstraint` (`MapCode`);
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `Country`
---
-ALTER TABLE `Country`
-  ADD PRIMARY KEY (`MapCode`);
-
---
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Constraints for table `Actual_Load`
+-- AUTO_INCREMENT for table `Actual_Load`
 --
 ALTER TABLE `Actual_Load`
-  ADD CONSTRAINT `MapCodeConstraint` FOREIGN KEY (`MapCode`) REFERENCES `Country` (`MapCode`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

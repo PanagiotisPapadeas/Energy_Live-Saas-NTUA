@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 07, 2022 at 04:59 PM
+-- Generation Time: Jul 11, 2022 at 06:02 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,38 +24,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Aggregated_Generation`
+-- Table structure for table `Aggregated_Genration`
 --
 
-CREATE TABLE `Aggregated_Generation` (
-  `DateTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+CREATE TABLE `Aggregated_Genration` (
+  `ID` int(11) NOT NULL,
+  `DateTime` datetime NOT NULL,
   `MapCode` varchar(30) NOT NULL,
+  `CountryName` varchar(50) NOT NULL,
   `ProductionTypeName` varchar(255) NOT NULL,
-  `ResolutionCode` varchar(255) DEFAULT NULL,
+  `ResolutionCode` varchar(30) NOT NULL,
   `ActualGenerationOutput` float NOT NULL,
   `ActualConsumption` float NOT NULL,
-  `UpdateTime` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Country`
---
-
-CREATE TABLE `Country` (
-  `MapCode` varchar(30) NOT NULL,
-  `Name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Production_Type`
---
-
-CREATE TABLE `Production_Type` (
-  `ProductionTypeName` varchar(255) NOT NULL
+  `UpdateTime` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -63,35 +44,20 @@ CREATE TABLE `Production_Type` (
 --
 
 --
--- Indexes for table `Aggregated_Generation`
+-- Indexes for table `Aggregated_Genration`
 --
-ALTER TABLE `Aggregated_Generation`
-  ADD PRIMARY KEY (`DateTime`,`MapCode`,`ProductionTypeName`),
-  ADD KEY `MapCodeConstraint` (`MapCode`),
-  ADD KEY `ProductionTypeNameConstraint` (`ProductionTypeName`);
+ALTER TABLE `Aggregated_Genration`
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `Country`
---
-ALTER TABLE `Country`
-  ADD PRIMARY KEY (`MapCode`);
-
---
--- Indexes for table `Production_Type`
---
-ALTER TABLE `Production_Type`
-  ADD PRIMARY KEY (`ProductionTypeName`);
-
---
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Constraints for table `Aggregated_Generation`
+-- AUTO_INCREMENT for table `Aggregated_Genration`
 --
-ALTER TABLE `Aggregated_Generation`
-  ADD CONSTRAINT `MapCodeConstraint` FOREIGN KEY (`MapCode`) REFERENCES `Country` (`MapCode`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `ProductionTypeNameConstraint` FOREIGN KEY (`ProductionTypeName`) REFERENCES `Production_Type` (`ProductionTypeName`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Aggregated_Genration`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

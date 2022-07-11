@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 11, 2022 at 05:56 PM
+-- Generation Time: Jul 11, 2022 at 07:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,13 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Actual_Load` (
-  `ID` int(11) NOT NULL,
   `DateTime` datetime NOT NULL,
-  `MapCode` varchar(30) NOT NULL,
-  `CountryName` varchar(50) NOT NULL,
-  `ResolutionCode` varchar(30) NOT NULL,
+  `MapCode` varchar(10) NOT NULL,
+  `ResolutionCode` varchar(255) NOT NULL,
   `TotalLoadValue` float NOT NULL,
-  `UpdateTime` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `UpdateTime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -45,17 +43,7 @@ CREATE TABLE `Actual_Load` (
 -- Indexes for table `Actual_Load`
 --
 ALTER TABLE `Actual_Load`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `Actual_Load`
---
-ALTER TABLE `Actual_Load`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  ADD PRIMARY KEY (`DateTime`,`MapCode`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

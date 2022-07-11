@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 11, 2022 at 06:02 PM
+-- Generation Time: Jul 11, 2022 at 07:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,19 +24,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Aggregated_Genration`
+-- Table structure for table `Aggregated_Generation`
 --
 
-CREATE TABLE `Aggregated_Genration` (
-  `ID` int(11) NOT NULL,
+CREATE TABLE `Aggregated_Generation` (
   `DateTime` datetime NOT NULL,
-  `MapCode` varchar(30) NOT NULL,
-  `CountryName` varchar(50) NOT NULL,
-  `ProductionTypeName` varchar(255) NOT NULL,
-  `ResolutionCode` varchar(30) NOT NULL,
+  `MapCode` varchar(10) NOT NULL,
+  `ProductionType` varchar(255) NOT NULL,
+  `ResolutionCode` varchar(255) NOT NULL,
   `ActualGenerationOutput` float NOT NULL,
   `ActualConsumption` float NOT NULL,
-  `UpdateTime` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `UpdateTime` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -44,20 +42,10 @@ CREATE TABLE `Aggregated_Genration` (
 --
 
 --
--- Indexes for table `Aggregated_Genration`
+-- Indexes for table `Aggregated_Generation`
 --
-ALTER TABLE `Aggregated_Genration`
-  ADD PRIMARY KEY (`ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `Aggregated_Genration`
---
-ALTER TABLE `Aggregated_Genration`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Aggregated_Generation`
+  ADD PRIMARY KEY (`DateTime`,`MapCode`,`ProductionType`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

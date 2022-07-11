@@ -55,7 +55,7 @@ CREATE TABLE `Country` (
 --
 ALTER TABLE `Actual_Load`
   ADD PRIMARY KEY (`DateTime`,`MapCode`),
-  ADD KEY `MapCodeConstraint` (`ResolutionCode`);
+  ADD KEY `MapCodeConstraint` (`MapCode`);
 
 --
 -- Indexes for table `Country`
@@ -71,7 +71,7 @@ ALTER TABLE `Country`
 -- Constraints for table `Actual_Load`
 --
 ALTER TABLE `Actual_Load`
-  ADD CONSTRAINT `MapCodeConstraint` FOREIGN KEY (`ResolutionCode`) REFERENCES `Country` (`MapCode`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `MapCodeConstraint` FOREIGN KEY (`MapCode`) REFERENCES `Country` (`MapCode`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,10 +13,7 @@ body{
     background-size: cover;
 }
 
-/* .g-signin2{
-    width: 100%;
-  }
-  
-  .g-signin2 > div{
-    margin: 0 auto;
-  } */
+.mylogin{
+  width: 15%;
+  margin: auto;
+}

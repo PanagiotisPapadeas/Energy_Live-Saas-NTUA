@@ -1,22 +1,22 @@
-#title{
-    color: indigo;
-    text-align: center;
-    border: solid 4px;
-    border-color: aqua;
-    border-radius: 10px;
-    font-size: 50px;
+#title {
+  color: indigo;
+  text-align: center;
+  border: solid 4px;
+  border-color: aqua;
+  border-radius: 10px;
+  font-size: 50px;
 }
 
 
-body{
-    background: url(energy.jpg);
-    background-size: cover;
+body {
+  background: url(energy.jpg);
+  background-size: cover;
 }
 
-/* .g-signin2{
-    width: 100%;
-  }
-  
-  .g-signin2 > div{
-    margin: 0 auto;
-  } */
+#mysso {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}

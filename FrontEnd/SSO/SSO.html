@@ -4,27 +4,25 @@
 <head>
     <title>EnergyLive2022</title>
     <link rel="stylesheet" type="text/css" href="./SSO.css">
-    <!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,100i,400"> -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,100i,400">
     <script type="text/javascript" src="SSO.js"></script>
 </head>
 
 <body>
     <h1 id="title">EnergyLive 2022</h1>
-
+    
+    
     <!-- ===============================FOR GOOGLE SSO============================== -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <div class="mylogin">
-        <div id="g_id_onload" data-client_id="1084378560225-9k00d37j8bb2sgqvgo5umi0r4831ccr6.apps.googleusercontent.com"
-        data-callback="handleCredentialResponse" href="../HighCharts/Charts.html">
-        </div>
-        <div class="g_id_signin" data-type="standard">
-        </div>
+    <div id="g_id_onload" data-client_id="1084378560225-9k00d37j8bb2sgqvgo5umi0r4831ccr6.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
     </div>
+    <div class="g_id_signin" data-type="standard">button</div>
     <!-- ======================================================================== -->
-<button onclick="action()">CheckLogin</button>
+
+
 
 </body>
 
-</html>
+</html> 
 
-<!-- https://oauth2.googleapis.com/tokeninfo?id_token= -->

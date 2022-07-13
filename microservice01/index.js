@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+const cors = require('cors');
+
+app.use(cors())
+
 //port 4003
 app.listen(4003, function () {
 console.log("listening on 4003");
@@ -127,7 +131,7 @@ app.get("/generation/:country_name/:generation_type/:date_from/:date_to", (req, 
     test.quantity = "Generation per type";
     test.country_name = req.params.country_name;
     test.generation_type = req.params.generation_type;
-
+	
 
 	con.connect(function(err) {
 		if (err) throw err;

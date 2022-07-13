@@ -3,31 +3,28 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script type="text/javascript" src="test.js"></script>
 
 <script>
 
-    let data = []
+let data = []
     let options = {
 
 title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016'
+    text: 'Actual total load per country'
 },
 
 subtitle: {
-    text: 'Source: thesolarfoundation.com'
+    text: ''
 },
 
 yAxis: {
     title: {
-        text: 'Number of Employees'
+        text: 'Actual total load values'
     }
 },
 
 xAxis: {
-    accessibility: {
-        rangeDescription: 'Range: 2010 to 2017'
-    }
+    categories: []
 },
 
 legend: {
@@ -41,12 +38,12 @@ plotOptions: {
         label: {
             connectorAllowed: false
         },
-        pointStart: 2010
+        pointStart: 1
     }
 },
 
 series: [{
-    name: 'Installation',
+    name: 'Actual load',
     data: data
 }],
 
@@ -74,22 +71,45 @@ responsive: {
         options.series[0].data = data;
         plot()
     }
+    let userId =  1;
     function addFromWeb(){
-        const url = 'http://localhost:4002/totalload/DE/2000-01-01%2000:00:00/2030-01-01%2000:00:00/';
-        console.log("1");
+        const url = 'https://jsonplaceholder.typicode.com/todos/'+ userId;
+        //console.log("1");
         fetch(url).then(response => response.json()).then(json => {
              //console.log(json.ind);
-             alert("1");
-             data.push(json.ind*2000);
+             //alert("1");
+             userId++;
+             data.push(json['id']*2000);
              options.series[0].data = data;
              plot()
         }
         )
     }
+    function addFromWeb1(){
+        const url = 'http://localhost:4002/totalload/DE/2000-01-01%2000:00:00/2030-01-01%2000:00:00/';
+        //console.log("1");
+        //alert("1");
+        fetch(url).then(response => response.json()).then(json => {
+             //console.log(json.ind);
+             //alert("1");
+             console.log(json.list[0].TotalLoadValue)
+             var x = (Object.keys(json.list).length)
+             for (var i=0; i<x; i++){
+             console.log(json.list[i].TotalLoadValue);
+             data.push(json.list[i].TotalLoadValue);
+             }
+             options.series[0].data = data;
+             plot()
+             data = [];
+        }
+        )
+    }
 </script>
+  
+
 <button onclick="plot()">Plot</button>
 <button onclick="addElement()">addElement</button>
-<button onclick="addFromWeb()">AddFromWeb</button>
+<button onclick="addFromWeb1()">AddFromWeb</button>
 <figure class="highcharts-figure">
     <div id="container"></div>
     <p class="highcharts-description">

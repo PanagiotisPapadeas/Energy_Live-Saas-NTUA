@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+const cors = require('cors');
+
+app.use(cors())
 //port 4002
 app.listen(4002, function () {
 console.log("listening on 4002");
@@ -15,15 +18,6 @@ app.get("/insert", (req, res) => {
 		password: "panoplos",
 		database:"saasdb2"
 	});
-        
-	//JSON object to return
-    /*var test = { 
-
-	};
-    test.quantity = "Actual total load";
-    test.country_name = req.params.country_name;*/
-
-
 
 	con.connect(function(err) {
 		if (err) throw err;
@@ -45,17 +39,8 @@ app.get("/insert", (req, res) => {
 				`REPLACE INTO actual_load values(?, ?, ?, ?, ?)`;
 
 				var items = [datetim, mapcode, Res, totalvalue, update];
-		  
-				// Inserting data of current row
-				// into database
-				/*con.query(insertStatement1, items1, 
-					(err, results, fields) => {
-					if (err) {
-						console.log(
-			"Unable to insert item at row ", i + 1);
-						return console.log(err);
-					}
-				});*/
+		    
+				//filter countries
 				if(AreaName === "CTY"){
 				con.query(insertStatement, items, 
 					(err, results, fields) => {
@@ -132,7 +117,7 @@ app.get("/totalload/:country_name/:date_from/:date_to", (req, res) => {
 		if (err) throw err;
 		console.log("Connected!");
 		//query to get actual total load from given country and dates
-		let myquery="SELECT TotalLoadValue, UpdateTime from actual_load WHERE MapCode="+"'"+req.params.country_name+"'"+" and DateTime >="+"'"+req.params.date_from+"'"+" and DateTime <="+"'"+req.params.date_to+"'";
+		let myquery="SELECT TotalLoadValue, DateTime from actual_load WHERE MapCode="+"'"+req.params.country_name+"'"+" and DateTime >="+"'"+req.params.date_from+"'"+" and DateTime <="+"'"+req.params.date_to+"'";
 		con.query(myquery, function (err, result, fields){
 			if (err) throw err;
             test.list = result;

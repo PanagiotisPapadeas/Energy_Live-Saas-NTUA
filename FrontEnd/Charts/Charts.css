@@ -1,0 +1,14 @@
+body{
+    background-color: aquamarine;
+}
+
+.plot_parameters {
+    width: 30%;
+    height: 605px;
+    float: left;
+    background-color: blanchedalmond;
+}
+
+#gen_type{
+    visibility: hidden;
+}

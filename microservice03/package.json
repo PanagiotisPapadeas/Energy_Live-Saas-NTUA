@@ -1,8 +1,8 @@
 {
-  "name": "microservice03",
+  "name": "microservice05",
   "version": "1.0.0",
   "description": "## (name)",
-  "main": "cons1.js",
+  "main": "consumer3a.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

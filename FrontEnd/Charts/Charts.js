@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
     // alert(localStorage.getItem("email"))
     document.getElementById("email").innerHTML = localStorage.getItem("email");
-    document.getElementById("first_name").innerHTML = localStorage.getItem("first_name");
-    document.getElementById("last_name").innerHTML = localStorage.getItem("last_name");
+    document.getElementById("first_name").innerHTML = localStorage.getItem("given_name");
+    document.getElementById("last_name").innerHTML = localStorage.getItem("family_name");
+
     
 })
 
@@ -28,21 +29,25 @@ function logout(){
     window.location.assign("../SSO/SSO.html");
 }
 
+function goto_extend(){
+    window.location.assign("../ExtendPlan/Extend.html")
+}
+
 function plot(){
     Highcharts.chart('container', options);
 }
+
 function addElement(){
     data.push(Math.floor(Math.random()*1000))
     options.series[0].data = data;
     plot()
 }
+
 let userId =  1;
 function addFromWeb(){
     const url = 'https://jsonplaceholder.typicode.com/todos/'+ userId;
     //console.log("1");
     fetch(url).then(response => response.json()).then(json => {
-         //console.log(json.ind);
-         //alert("1");
          userId++;
          data.push(json['id']*2000);
          options.series[0].data = data;
@@ -102,30 +107,6 @@ function addFromWeb1(){
     }
     )
 }
-// let namex = sessionStorage.getItem("first_name");
 
 
-// document.addEventListener("DOMContentLoaded", function () {
-    //     let email = location.search.substring(1);
-    //     // let a = first_last.split("|");
-    //     // window.alert(email_query);
-    //     // let email = a[0];
-    //     // let last = a[1];
-    //     // document.getElementById("first_last_name").innerHTML = "Hello " + email;
-    //     // let quantity = document.getElementById("quantity")
-    // let quantity = document.querySelector("select[name=quantity]").value;
-    // let gen_type = document.querySelector("li[id=gen_type]");
-    //     // alert(typeof(gen_type));  
-    //     alert(quantity);  
-    //     // if(quantity == "type"){
-        //     //     alert("yo");
-        //     // }
-        
-        //     //alert("Page Loaded...");
-        
-        
-        
-        
 
-
-// })

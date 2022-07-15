@@ -1,5 +1,10 @@
 @charset "ISO-8859-1";
 
+body{
+	background-color: aquamarine;
+}
+
+
 h1 {
 	text-align: center;
 	color: darkblue;
@@ -74,7 +79,9 @@ input {
 	cursor: pointer;
 	background-color: lightgreen;
 }
-#extend {
+
+
+/* #extend {
 	border: 1px solid darkgray;
 	border-radius: 5px;
 	padding: 5px; 
@@ -95,7 +102,7 @@ input {
 #cancel:hover {
 	cursor: pointer;
 	background-color: lightgreen;
-}
+} */
 
 .checkOutput {
 	min-width: 150px;
@@ -119,6 +126,30 @@ input {
   padding: 16px;
   font-size: 16px;
   border: none;
+}
+
+
+.button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: blueviolet; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    /* margin-left: 38%; */
+    /* text-decoration: double; */
+    /* display: inline-block; */
+    /* font-size: 16px;     */
+    /* margin: 0 auto; */
+}
+
+.button:hover{
+    background-color: red;
+    transition: 0.5s;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
 }
 
 /* The container <div> - needed to position the dropdown content */

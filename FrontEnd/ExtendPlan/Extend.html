@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+
+	<title>EnergyLive2022</title>
+
+	<!-- Specify the CSS File -->
+	<link rel="stylesheet" type="text/css" href="Extend.css">
+
+	<!-- Specify the JavaScript File -->
+	<script type="text/javascript" src="Extend.js"></script>
+
+</head>
+
+<body>
+	<h1><u>EnergyLive2022</u></h1>
+
+	<table class="logintable">
+		<tr>
+			<th>First name:</th>
+			<td> <input type="text" id="first_name" readonly> </td>
+		</tr>
+		<tr>
+			<th>Last name:</th>
+			<td> <input type="text" id="last_name" readonly> </td>
+		</tr>
+		<tr>
+			<th>Email:</th>
+			<td> <input type="text" id="email" readonly> </td>
+		</tr>
+	</table>
+	<table class="logintable1">
+		<tr>
+			<th>Days left:</th>
+			<td>
+				<div id="daysleft">N/A</div>
+			</td>
+			<th>Extend by (days):</th>
+			<td>
+				<div class="dropdown">
+					<button class="dropbtn">Dropdown</button>
+					<div class="dropdown-content">
+						<a href="#">Link 1</a>
+						<a href="#">Link 2</a>
+						<a href="#">Link 3</a>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<table class="logintable2">
+		<tr>
+			<td>
+				<div class="button" onclick="extend()">Extend Plan</div>
+			</td>
+			<td>
+				<div class="button" onclick="cancel()">Cancel Plan</div>
+			</td>
+			<td>
+				<div class="button" onclick="back()">Return Back</div>
+			</td>
+		</tr>
+
+		<!-- <tr>
+			<td>
+				<div id="extend onclick="extend()">Extend Plan</div>
+			</td>
+			<td>
+				<div id="cancel" onclick="cancel()">Cancel Plan</div>
+			</td>
+			<td>
+				<div id="back" onclick="cancel()">Back</div>
+			</td>
+		</tr> -->
+	</table>
+
+
+</body>
+
+</html>

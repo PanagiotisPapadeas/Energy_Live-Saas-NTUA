@@ -1,4 +1,4 @@
-body{
+body {
     background-color: aquamarine;
 }
 
@@ -10,31 +10,82 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#gen_type{
+#gen_type {
     visibility: hidden;
 }
 
-label{
+label {
     font-family: 'Courier New', Courier, monospace, bold;
     font-size: 20px;
 }
 
-option{
+option {
     font-family: 'Courier New', Courier, monospace, bold;
     font-size: 15px;
     font-weight: bold;
 }
-/* 
-table{
-    border-radius: 10px;
-    border-width: 5px;
-    border-style: dashed;
-} */
 
-table, th, td {
+#Check1 {
+    margin-right: 300px;
+    display: inline-block
+}
+
+#Check2 {
+    margin-right: 200px;
+    display: inline-block
+}
+
+#Check3 {
+    margin-left: 100px;
+    display: inline-block
+}
+
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     width: 80%;
-  }
+    text-align: center;
+    text-decoration: underline;
+}
+
+th{
+    background-color: rgb(0, 200, 100);
+    font-size: 18px;
+}
+
+tr{
+    background-color: chartreuse;
+    font-weight: bold;
+}
+
+.redirect_buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: blueviolet; /* Green */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    /* margin-left: 38%; */
+    /* text-decoration: double; */
+    /* display: inline-block; */
+    /* font-size: 16px;     */
+    /* margin: 0 auto; */
+}
+
+.button:hover{
+    background-color: red;
+    transition: 0.5s;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+}

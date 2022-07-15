@@ -59,11 +59,13 @@
             </li>
             <li id="gen_type">
                 <label> Pick generation type: </label>
-                <select name="gen_type">
-                    <option value="Natural gas">Natural gas</option>
+                <select name="gen_type" id="gen">
+                    <option value="Fossil Hard Coal"> Fossil Hard coal </option>
+                    <option value="Geothermal"> Geothermal </option>
                     <option value="Wind Onshore"> Wind Onshore </option>
                     <option value="Solar"> Solar </option>
                     <option value="Hydro Water Reservoir">Hydro Water Reservoir</option>
+                    <option value="Hydro Pumped Storage">Hydro Pumped Storage</option>
                     <option value="Fossil Gas">Fossil Gas</option>
                     <option value="Waste">Waste</option>
                     <option value="Fossil Oil">Fossil Oil</option>
@@ -97,7 +99,6 @@
         </table>
         <!-- </div> -->
         <button type="button" onclick="logout()">Logout</button>
-		<button type="button" onclick="asyncLoadContent('index1.html')">Charts</button>
     </div>
 
 
@@ -214,7 +215,7 @@ responsive: {
 </script>
   
 <div id = "Check1" style = "margin-right:500px; display: inline-block">Quantity</div>
-<div id = "Check2" style = "margin-right:500px; display: inline-block">Type</div>
+<div id = "Check2" style = "margin-right:200px; display: inline-block"></div>
 <div id = "Check3" style = "margin-left:500px; display: inline-block">Country</div>
 <figure class="highcharts-figure">
     <div id="container"></div>
@@ -227,8 +228,6 @@ responsive: {
 <div id = "update" style = "display: inline-block">Latest update:</div>
 <div id = "dateupdate" style = "display: inline-block">Day</div>
 <br>
-<button type="button" onclick="plot()">Plot</button>
-<button type="button" onclick="addElement()">addElement</button>
 <button type="button" onclick="addFromWeb1()" style = "padding:10px; margin-left:500px;"">Refresh</button>
 
 

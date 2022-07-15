@@ -19,7 +19,7 @@ function get_quantity(){
     
     let quantity = document.querySelector("select[name=quantity]").value;
     let gen_type = document.querySelector("li[id=gen_type]");
-    if(quantity == "type") gen_type.style.visibility = "visible";
+    if (quantity == "Generation per type") gen_type.style.visibility = "visible";
     else gen_type.style.visibility = "hidden";
 
 }
@@ -57,22 +57,27 @@ function addFromWeb1(){
     console.log(date1);
     const quantity = document.getElementById('quantity').value;
     const country = document.getElementById('country').value;
-    const gen_type = document.getElementById('gen_type').value;
+    const gen_type = document.getElementById('gen').value;
     console.log(quantity);
     if (quantity == "Actual total load")
     var url = 'http://localhost:4002/totalload/'+country+'/'+date1+'/'+date2+'/';
     else 
     var url = 'http://localhost:4003/generation/'+country+'/'+gen_type+'/'+date1+'/'+date2+'/';
+    console.log(url);
     //console.log("1");
     //alert("1");
     fetch(url).then(response => response.json()).then(json => {
          //console.log(json.ind);
          //alert("1");
-         console.log(json.list[0].TotalLoadValue)
+         //console.log(json.list[0].TotalLoadValue)
+         const quantity = document.getElementById('quantity').value;
          var x = (Object.keys(json.list).length)
          for (var i=0; i<x; i++){
-         console.log(json.list[i].TotalLoadValue);
-         data.push(json.list[i].TotalLoadValue);
+         //console.log(json.list[i].TotalLoadValue);
+         if  (quantity == "Actual total load")
+             data.push(json.list[i].TotalLoadValue);
+         else
+             data.push(json.list[i].ActualGenerationOutput);
          }
          options.series[0].data = data;
          //x = quantity.innerHTML;
@@ -80,15 +85,17 @@ function addFromWeb1(){
          const check2 = document.getElementById('Check2');
          const check3 = document.getElementById('Check3');
          const check4 = document.getElementById('dateupdate');
-         const quantity = document.getElementById('quantity').value;
+         //const quantity = document.getElementById('quantity').value;
          const country = document.getElementById('country').value;
          console.log(quantity);
          check1.innerText = quantity;
          check3.innerText = country;
-         const gen_type = document.getElementById('gen_type').value;
+         const gen_type = document.getElementById('gen').value;
+         console.log(gen_type);
          check2.innerText = gen_type;
-         if (gen_type == 0) check2.innerText = "";
-         check4.innerText = json.list[i-1].UpdateTime;
+         if (quantity == "Actual total load") check2.innerText = "";
+         try{check4.innerText = json.list[i-1].UpdateTime;}
+         catch{alert("No values found!")}
          plot()
          data = [];
     }

@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
-<link rel="StyleSheet" href="Charts.css">
-<script type="text/javascript" src="Charts.js"></script>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
 <head>
+    <link rel="StyleSheet" href="Charts.css">
+    <script type="text/javascript" src="Charts.js"></script>
+    <!-- <script type="text/javascript" src="../SSO/SSO.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
 </head>
 
 <body>
     <div class="plot_parameters">
+        <h2 style="text-align: center; font-family: 'Courier New', Courier, monospace; font-size: 35px;">
+            <u>EnergyLive2022</u></i>
+        </h2>
         <ul>
             <li>
-                <label>Pick a date:</label>
+                <label> Pick a date:</label>
                 <input type="date" id="date" name="date">
                 <br>
                 <br>
             </li>
             <li>
                 <label> Pick quantity: </label>
-                <select name="quantity" id="quantity">
+                <select name="quantity" id="quantity" onchange="get_quantity()">
                     <option value="load">Actual Total Load</option>
                     <option value="type">Generation Per Type</option>
                 </select>
@@ -29,12 +33,20 @@
             <li>
                 <label> Pick a country: </label>
                 <select name="country" id="country">
-                    <option value=""> Albania </option>
+                    <option value="DE"> Germany </option>
                     <option value="GR" selected> Greece </option>
-                    <option value=""> Austria </option>
-                    <option value=""> Germany </option>
-                    <option value=""> Italy </option>
-                    <option value=""> Spain </option>
+                    <option value="XK"> Kosovo </option>
+                    <option value="AT"> Austria </option>
+                    <option value="CH"> Switzerland </option>
+                    <option value="RO"> Romania </option>
+                    <option value="HU"> Hungary </option>
+                    <option value="ME"> Montenegro </option>
+                    <option value="RS"> Serbia </option>
+                    <option value="HU"> Hungary </option>
+                    <option value="LV"> Latvia </option>
+                    <option value="PL"> Poland </option>
+                    <option value="SI"> Slovenia </option>
+                    <option value="NL"> Netherlands </option>
                 </select>
                 <br>
                 <br>
@@ -42,14 +54,53 @@
             <li id="gen_type">
                 <label> Pick generation type: </label>
                 <select name="gen_type">
-                    <option value="">Natural gas</option>
+                    <option value="Natural gas">Natural gas</option>
+                    <option value="Wind Onshore"> Wind Onshore </option>
+                    <option value="Solar"> Solar </option>
+                    <option value="Hydro Water Reservoir">Hydro Water Reservoir</option>
+                    <option value="Fossil Gas">Fossil Gas</option>
+                    <option value="Waste">Waste</option>
+                    <option value="Fossil Oil">Fossil Oil</option>
+                    <option value="Biomass">Biomass</option>
+                    <option value="Nuclear">Nuclear</option>
+                </select>
+
+                <!-- <option value="Hydro Run-of-river and poundage"> Hydro Run-of-river and poundage</option> -->
+                <!-- <option value="Other"> Other </option> -->
             </li>
         </ul>
+        <!-- <div id="info"> -->
+        <table>
+            <tr>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            <tr>
+                <td>
+                    <p id="email">Mail</p>
+                </td>
+                <td>
+                    <p id="first_name">Name</p>
+                </td>
+                <td>
+                    <p id="last_name">Surname</p>
+                </td>
 
-
-
-
+            </tr>
+        </table>
+        <!-- </div> -->
+        <button type="button" onclick="logout()">Logout</button>
     </div>
+
+
+    <!--===========================EDW VALTE TA CHARTS SE PRWTI FASI====================== -->
+    <div class="mycharts" style="font-size: 50px; font-weight: bold;">
+        XWSTE EDW TA CHARTS
+    </div>
+
+
+
 </body>
 
 </html>

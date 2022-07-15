@@ -19,7 +19,7 @@ function get_quantity(){
     
     let quantity = document.querySelector("select[name=quantity]").value;
     let gen_type = document.querySelector("li[id=gen_type]");
-    if(quantity == "type") gen_type.style.visibility = "visible";
+    if(quantity == "Generation per type") gen_type.style.visibility = "visible";
     else gen_type.style.visibility = "hidden";
 
 }
@@ -58,7 +58,7 @@ function addFromWeb1(){
     const quantity = document.getElementById('quantity').value;
     const country = document.getElementById('country').value;
     const gen_type = document.getElementById('gen_type').value;
-    console.log(quantity);
+    //console.log(country1);
     if (quantity == "Actual total load")
     var url = 'http://localhost:4002/totalload/'+country+'/'+date1+'/'+date2+'/';
     else 
@@ -82,9 +82,10 @@ function addFromWeb1(){
          const check4 = document.getElementById('dateupdate');
          const quantity = document.getElementById('quantity').value;
          const country = document.getElementById('country').value;
+         const country1 = document.querySelector('option[value='+country+']').innerText;
          console.log(quantity);
          check1.innerText = quantity;
-         check3.innerText = country;
+         check3.innerText = country1;
          const gen_type = document.getElementById('gen_type').value;
          check2.innerText = gen_type;
          if (gen_type == 0) check2.innerText = "";

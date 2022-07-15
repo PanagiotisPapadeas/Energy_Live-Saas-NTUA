@@ -117,7 +117,7 @@ app.get("/totalload/:country_name/:date_from/:date_to", (req, res) => {
 		if (err) throw err;
 		console.log("Connected!");
 		//query to get actual total load from given country and dates
-		let myquery="SELECT TotalLoadValue, DateTime from actual_load WHERE MapCode="+"'"+req.params.country_name+"'"+" and DateTime >="+"'"+req.params.date_from+"'"+" and DateTime <="+"'"+req.params.date_to+"'";
+		let myquery="SELECT TotalLoadValue, UpdateTime from actual_load WHERE MapCode="+"'"+req.params.country_name+"'"+" and DateTime >="+"'"+req.params.date_from+"'"+" and DateTime <="+"'"+req.params.date_to+"'";
 		con.query(myquery, function (err, result, fields){
 			if (err) throw err;
             test.list = result;

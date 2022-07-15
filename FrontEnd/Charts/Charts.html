@@ -17,15 +17,21 @@
         <ul>
             <li>
                 <label> Pick a date:</label>
-                <input type="date" id="date" name="date">
+                <input type="date" id="date1" name="date1">
+                <br>
+                <br>
+            </li>
+			<li>
+                <label> Pick a date:</label>
+                <input type="date" id="date2" name="date2">
                 <br>
                 <br>
             </li>
             <li>
                 <label> Pick quantity: </label>
                 <select name="quantity" id="quantity" onchange="get_quantity()">
-                    <option value="load">Actual Total Load</option>
-                    <option value="type">Generation Per Type</option>
+                    <option value="Actual total load">Actual Total Load</option>
+                    <option value="Generation per type">Generation Per Type</option>
                 </select>
                 <br>
                 <br>
@@ -91,6 +97,7 @@
         </table>
         <!-- </div> -->
         <button type="button" onclick="logout()">Logout</button>
+		<button type="button" onclick="asyncLoadContent('index1.html')">Charts</button>
     </div>
 
 
@@ -98,6 +105,131 @@
     <div class="mycharts" style="font-size: 50px; font-weight: bold;">
         XWSTE EDW TA CHARTS
     </div>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+
+let data = []
+    let options = {
+
+title: {
+    text: ''
+},
+
+subtitle: {
+    text: ''
+},
+
+yAxis: {
+    title: {
+        text: ''
+    }
+},
+
+xAxis: {
+    categories: []
+},
+
+legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle'
+},
+
+plotOptions: {
+    series: {
+        label: {
+            connectorAllowed: false
+        },
+        pointStart: 1
+    }
+},
+
+series: [{
+    name: 'Actual load',
+    data: data
+}],
+
+responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom'
+            }
+        }
+    }]
+}
+
+}
+    // function plot(){
+    //     Highcharts.chart('container', options);
+    // }
+    // function addElement(){
+    //     data.push(Math.floor(Math.random()*1000))
+    //     options.series[0].data = data;
+    //     plot()
+    // }
+    // let userId =  1;
+    // function addFromWeb(){
+    //     const url = 'https://jsonplaceholder.typicode.com/todos/'+ userId;
+    //     //console.log("1");
+    //     fetch(url).then(response => response.json()).then(json => {
+    //          //console.log(json.ind);
+    //          //alert("1");
+    //          userId++;
+    //          data.push(json['id']*2000);
+    //          options.series[0].data = data;
+    //          plot()
+    //     }
+    //     )
+    // }
+    // function addFromWeb1(){
+    //     const url = 'http://localhost:4002/totalload/DE/2000-01-01%2000:00:00/2030-01-01%2000:00:00/';
+    //     //console.log("1");
+    //     //alert("1");
+    //     fetch(url).then(response => response.json()).then(json => {
+    //          //console.log(json.ind);
+    //          //alert("1");
+    //          console.log(json.list[0].TotalLoadValue)
+    //          var x = (Object.keys(json.list).length)
+    //          for (var i=0; i<x; i++){
+    //          console.log(json.list[i].TotalLoadValue);
+    //          data.push(json.list[i].TotalLoadValue);
+    //          }
+    //          options.series[0].data = data;
+    //          plot()
+    //          data = [];
+    //     }
+    //     )
+    // }
+</script>
+  
+<div id = "Check1" style = "margin-right:500px; display: inline-block">Quantity</div>
+<div id = "Check2" style = "margin-right:500px; display: inline-block">Type</div>
+<div id = "Check3" style = "margin-left:500px; display: inline-block">Country</div>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        Basic line chart showing trends in a dataset. This chart includes the
+        <code>series-label</code> module, which adds a label to each line for
+        enhanced readability.
+    </p>
+</figure>
+<div id = "update" style = "display: inline-block">Latest update:</div>
+<div id = "dateupdate" style = "display: inline-block">Day</div>
+<br>
+<button type="button" onclick="plot()">Plot</button>
+<button type="button" onclick="addElement()">addElement</button>
+<button type="button" onclick="addFromWeb1()" style = "padding:10px; margin-left:500px;"">Refresh</button>
 
 
 

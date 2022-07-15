@@ -87,9 +87,10 @@ function addFromWeb1(){
          const check4 = document.getElementById('dateupdate');
          //const quantity = document.getElementById('quantity').value;
          const country = document.getElementById('country').value;
-         console.log(quantity);
+         const country1 = document.querySelector('option[value='+country+']').innerText;
+         console.log(country1);
          check1.innerText = quantity;
-         check3.innerText = country;
+         check3.innerText = country1;
          const gen_type = document.getElementById('gen').value;
          console.log(gen_type);
          check2.innerText = gen_type;

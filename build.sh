@@ -5,3 +5,6 @@ mysql -u root -p saasdb1 < "database/saasdb1.sql"
 
 mysql -u root -p -e "CREATE DATABASE saasdb2"
 mysql -u root -p saasdb2 < "database/saasdb2.sql"
+
+mysql -u root -p -e "CREATE DATABASE saasusers"
+mysql -u root -p saasdb2 < "database/saasusers.sql"

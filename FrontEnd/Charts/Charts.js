@@ -26,6 +26,7 @@ function get_quantity(){
 }
 
 function logout(){
+    window.localStorage.clear();   
     window.location.assign("../SSO/SSO.html");
 }
 
@@ -93,11 +94,11 @@ function addFromWeb1(){
          //const quantity = document.getElementById('quantity').value;
          const country = document.getElementById('country').value;
          const country1 = document.querySelector('option[value='+country+']').innerText;
-         console.log(country1);
+        //  console.log(country1);
          check1.innerText = quantity;
          check3.innerText = country1;
          const gen_type = document.getElementById('gen').value;
-         console.log(gen_type);
+        //  console.log(gen_type);
          check2.innerText = gen_type;
          if (quantity == "Actual total load") check2.innerText = "";
          try{check4.innerText = json.list[i-1].UpdateTime;}

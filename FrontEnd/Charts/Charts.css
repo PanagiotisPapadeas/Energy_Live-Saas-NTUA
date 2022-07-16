@@ -2,6 +2,12 @@ body {
     background-color: aquamarine;
 }
 
+.selected_item{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 .plot_parameters {
     width: 35%;
     height: 605px;
@@ -24,7 +30,7 @@ option {
     font-size: 15px;
     font-weight: bold;
 }
-
+/* 
 #Check1 {
     margin-right: 300px;
     display: inline-block
@@ -38,7 +44,7 @@ option {
 #Check3 {
     margin-left: 100px;
     display: inline-block
-}
+} */
 
 table,
 th,

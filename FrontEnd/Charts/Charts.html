@@ -7,15 +7,77 @@
     </title>
 
     <script type="text/javascript">
+        // <!-- ==========================Disables back button in browser==========================-->
         function preventBack() {
-            window.history.forward(); 
+            window.history.forward();
         }
-          
-        setTimeout("preventBack()", 0);
-          
-        window.onunload = function () { null };
-    </script>
 
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+        // <!-- ============================================================================-->
+
+        // ===========================Snippet for charts========================= 
+        let data = []
+        let options = {
+
+            title: {
+                text: ''
+            },
+
+            subtitle: {
+                text: ''
+            },
+
+            yAxis: {
+                title: {
+                    text: ''
+                }
+            },
+
+            xAxis: {
+                categories: []
+            },
+
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 1
+                }
+            },
+
+            series: [{
+                name: 'Actual load',
+                data: data
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        }
+
+// <!-- ============================================================================-->
+    </script>
 
     <link rel="StyleSheet" href="Charts.css">
     <script type="text/javascript" src="Charts.js"></script>
@@ -76,7 +138,7 @@
                 <br>
             </li>
             <li id="gen_type">
-                <label> Pick generation type: </label>
+                <label> Generation type: </label>
                 <select name="gen_type" id="gen">
                     <option value="Fossil Hard Coal"> Fossil Hard coal </option>
                     <option value="Geothermal"> Geothermal </option>
@@ -124,75 +186,15 @@
     <!--===========================EDW VALTE TA CHARTS SE PRWTI FASI====================== -->
     <div class="mycharts">
 
-        <script>
 
-            let data = []
-            let options = {
+        <!-- Check1 -> Quantity, Check2 -> Type, Check3 -> Country -->
+        <div id="chart_header" inline>
+            <pre>
 
-                title: {
-                    text: ''
-                },
 
-                subtitle: {
-                    text: ''
-                },
-
-                yAxis: {
-                    title: {
-                        text: ''
-                    }
-                },
-
-                xAxis: {
-                    categories: []
-                },
-
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'middle'
-                },
-
-                plotOptions: {
-                    series: {
-                        label: {
-                            connectorAllowed: false
-                        },
-                        pointStart: 1
-                    }
-                },
-
-                series: [{
-                    name: 'Actual load',
-                    data: data
-                }],
-
-                responsive: {
-                    rules: [{
-                        condition: {
-                            maxWidth: 500
-                        },
-                        chartOptions: {
-                            legend: {
-                                layout: 'horizontal',
-                                align: 'center',
-                                verticalAlign: 'bottom'
-                            }
-                        }
-                    }]
-                }
-
-            }
-
-        </script>
-        <!-- <div id="chart_header" style="display: inline-block">
-            <h3>Quantity</h3>
-            <h3></h3>
-            <h3>Country</h3>
-        </div> -->
-        <div id="Check1">Quantity</div>
-        <div id="Check2"></div>
-        <div id="Check3">Country</div>
+                <h3>    <u><em class="selected_item" id="Check1">Quantity</em></u>                    <u><em class="selected_item" id="Check2">Generation Type</em></u>                       <u><em class="selected_item" id="Check3">Country</em></u>  </h3>
+                </pre>
+        </div>
         <figure class="highcharts-figure">
             <div id="container"></div>
             <!-- <p class="highcharts-description">

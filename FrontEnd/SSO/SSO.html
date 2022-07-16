@@ -2,6 +2,17 @@
 <html>
 
 <head>
+
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
+
     <title>EnergyLive2022</title>
     <link rel="stylesheet" type="text/css" href="./SSO.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:100,100i,400">

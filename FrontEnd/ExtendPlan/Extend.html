@@ -2,6 +2,18 @@
 <html>
 
 <head>
+
+	<script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
+
+
 	<meta charset="ISO-8859-1">
 
 	<title>EnergyLive2022</title>

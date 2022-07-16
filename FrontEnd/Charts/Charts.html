@@ -6,6 +6,17 @@
         EnergyLive2022
     </title>
 
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward(); 
+        }
+          
+        setTimeout("preventBack()", 0);
+          
+        window.onunload = function () { null };
+    </script>
+
+
     <link rel="StyleSheet" href="Charts.css">
     <script type="text/javascript" src="Charts.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>

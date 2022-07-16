@@ -1,8 +1,9 @@
 #title {
+  font-family: 'Courier New', Courier, monospace;
   color: indigo;
   text-align: center;
-  border: solid 4px;
-  border-color: aqua;
+  /* border: solid 4px; */
+  /* border-color: aqua; */
   border-radius: 10px;
   font-size: 50px;
 }
@@ -19,4 +20,16 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
+}
+
+hr {
+  width: 750px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+th {
+  padding: 0 100px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
 }

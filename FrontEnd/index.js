@@ -9,6 +9,6 @@ app.listen(4005, function () {
 console.log("listening on 4005");
 });
 
-
+//load html css js codes
 app.use(express.static('Pages'));
 

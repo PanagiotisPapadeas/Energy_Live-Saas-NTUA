@@ -3,10 +3,11 @@ const base_url = "https://oauth2.googleapis.com/tokeninfo?id_token=";
 
 function handleCredentialResponse(data) {
 
-    // console.log(data);
+    console.log(data);
     // alert(data);
     fetchUserDetails(data["credential"])
     window.location.assign("../Charts/Charts.html");
+    window.location.assign("Charts.html");
 
 }
 
@@ -27,6 +28,7 @@ function fetchUserDetails(cred) {
             // window.alert(parsedResponse["name"]);
             localStorage.setItem("given_name", parsedResponse["given_name"]);
             localStorage.setItem("family_name", parsedResponse["family_name"]);
+            console.log(parsedResponse["given_name"])
 
         }
     }

@@ -7,13 +7,6 @@ document.addEventListener("DOMContentLoaded", function(){
     
 })
 
-// const check1 = document.getElementById('Check1');
-// const check2 = document.getElementById('Check2');
-// const check3 = document.getElementById('Check3');
-// const check4 = document.getElementById('dateupdate');
-// const quantity = document.getElementById('quantity').innerHTML;
-// const country = document.getElementById('country');
-
 //This function either hides or displays the generation type
 //options based on the quantity option
 function get_quantity(){
@@ -27,11 +20,13 @@ function get_quantity(){
 
 function logout(){
     window.localStorage.clear();   
-    window.location.assign("../SSO/SSO.html");
+    // window.location.assign("../SSO/SSO.html");
+    window.location.assign("index.html");
 }
 
 function goto_extend(){
-    window.location.assign("../ExtendPlan/Extend.html")
+    // window.location.assign("../ExtendPlan/Extend.html")
+    window.location.assign("Extend.html")
 }
 
 function plot(){

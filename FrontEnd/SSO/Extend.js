@@ -10,5 +10,6 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 function back(){
-    window.location.assign("../Charts/Charts.html")
+    // window.location.assign("../Charts/Charts.html")
+    window.location.assign("Charts.html")
 }

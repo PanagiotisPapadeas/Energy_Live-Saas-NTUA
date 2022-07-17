@@ -40,6 +40,7 @@ app.get("/", (req, res) => {
     con.end()
 });
 
+//insert new user into database
 app.get("/ins/:gmail/:fname/:lname", (req, res) => {
     var mysql = require('mysql');
     var con = mysql.createConnection({
@@ -77,6 +78,7 @@ app.get("/ins/:gmail/:fname/:lname", (req, res) => {
     });
 })
 
+//update days for user
 app.get("/upd/:gmail/:fname/:lname/:days", (req, res) => {
     var mysql = require('mysql');
     var con = mysql.createConnection({
@@ -116,6 +118,7 @@ app.get("/upd/:gmail/:fname/:lname/:days", (req, res) => {
 
 })
 
+//get days remaining for user
 app.get("/days/:gmail", (req, res) => {
     var mysql = require('mysql');
     var con = mysql.createConnection({

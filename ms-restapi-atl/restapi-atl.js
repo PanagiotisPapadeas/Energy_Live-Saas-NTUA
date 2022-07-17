@@ -41,6 +41,7 @@ app.get("/", (req, res) => {
 	con.end(); // Don't forget to close the connection afterwards
 });
 
+//get actual total load values
 app.get("/totalload/:country_name/:date_from/:date_to", (req, res) => {
     var mysql = require('mysql');
     var con = mysql.createConnection({

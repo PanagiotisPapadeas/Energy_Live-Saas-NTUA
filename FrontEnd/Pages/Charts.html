@@ -93,35 +93,60 @@
 
 <body>
     <div class="plot_parameters">
-        <h2 style="text-align: center; font-family: 'Courier New', Courier, monospace; font-size: 35px; color: indigo;">
+<!--         <h2 style="text-align: center; font-family: 'Courier New', Courier, monospace; font-size: 35px; color: indigo;"> -->
+    <h2 style="text-align: center; font-family: 'Courier New', Courier, monospace; font-size: 50px; color: indigo;">
             <u>EnergyLive2022</u></i>
         </h2>
         <ul>
             <li>
                 <label> Starting date: </label>
-                <input type="date" id="date1" name="date1" style="margin-left: 10px;">
+<!--                 <input type="date" id="date1" name="date1" style="margin-left: 10px;"> -->
+        <input type="date" id="date1" name="date1" style="margin-left: 20px; font-size: 30px;">
                 <br>
                 <br>
             </li>
             <li>
                 <label> Ending date: </label>
-                <input type="date" id="date2" name="date2" style="margin-left: 32px;">
+                <!--<input type="date" id="date2" name="date2" style="margin-left: 32px;">-->
+                <input type="date" id="date2" name="date2" style="margin-left: 62px; font-size: 30px;">
                 <br>
                 <br>
             </li>
             <li>
                 <label> Quantity: </label>
-                <select name="quantity" id="quantity" onchange="get_quantity()"
+                <!--<select name="quantity" id="quantity" onchange="get_quantity()"
                     style="margin-left: 68px; width: 130px;">
                     <option value="Actual total load">Actual Total Load</option>
                     <option value="Generation per type">Generation Per Type</option>
-                </select>
+                </select>-->
+                <select name="quantity" id="quantity" onchange="get_quantity()"
+                    style="margin-left: 125px; width: 265px; height: 50px; font-size: 30px;">
+                    <option value="Actual total load">Actual Total Load</option>
+                    <option value="Generation per type">Generation Per Type</option>
+                </select>-
+
                 <br>
                 <br>
             </li>
             <li>
                 <label> Country: </label>
-                <select name="country" id="country" style="margin-left: 80px; width: 130px;">
+               <!-- <select name="country" id="country" style="margin-left: 80px; width: 130px;">
+                    <option value="DE"> Germany </option>
+                    <option value="GR" selected> Greece </option>
+                    <option value="XK"> Kosovo </option>
+                    <option value="AT"> Austria </option>
+                    <option value="CH"> Switzerland </option>
+                    <option value="RO"> Romania </option>
+                    <option value="HU"> Hungary </option>
+                    <option value="ME"> Montenegro </option>
+                    <option value="RS"> Serbia </option>
+                    <option value="HU"> Hungary </option>
+                    <option value="LV"> Latvia </option>
+                    <option value="PL"> Poland </option>
+                    <option value="SI"> Slovenia </option>
+                    <option value="NL"> Netherlands </option>
+                </select>-->
+                <select name="country" id="country" style="margin-left: 145px; width: 265px; height: 50px; font-size: 30px;">
                     <option value="DE"> Germany </option>
                     <option value="GR" selected> Greece </option>
                     <option value="XK"> Kosovo </option>
@@ -157,6 +182,9 @@
                 </select>
             </li>
         </ul>
+        <br>
+        <br>
+        <br>
         <table style="width: 80%;">
             <colgroup>
                 <col spane="1" style="width:50%;">
@@ -187,6 +215,9 @@
         <br>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
         <div class="redirect_buttons">
             <button type="button" class="button" onclick="logout()" style="margin-right: 90px;">Logout</button>
             <button type="button" class="button" onclick="goto_extend()">Extend Plan</button>
@@ -200,7 +231,7 @@
         <div id="chart_header" inline>
             <pre>
 
-                <h3>    <u><em class="selected_item" id="Check1">Quantity</em></u>                    <u><em class="selected_item" id="Check2">Generation Type</em></u>                       <u><em class="selected_item" id="Check3">Country</em></u>  </h3>
+                <h3>    <u><em class="selected_item" id="Check1">Quantity</em></u>         <u><em class="selected_item" id="Check2">Generation Type</em></u>            <u><em class="selected_item" id="Check3">Country</em></u>         <u><em class="selected_item" id="update">Latest update:</em></u> <u><em id="dateupdate" class="selected_item">Day</em></u> </h3>
                 </pre>
         </div>
         <!-- ========================================================================== -->
@@ -209,8 +240,8 @@
 
             </div>
         </figure>
-        <div id="update" style="display: inline-block">Latest update:</div>
-        <div id="dateupdate" style="display: inline-block">Day</div>
+        <!--div id="update" style="display: inline-block">Latest update:</div>
+        <div id="dateupdate" style="display: inline-block">Day</div>-->
 
         <button type="button" onclick="addFromWeb1()" class="button refresh">Refresh</button>
 

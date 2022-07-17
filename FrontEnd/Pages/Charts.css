@@ -1,17 +1,18 @@
 body {
-    background-color: aquamarine;
+    background-color: rgb(255, 224, 130);
 }
 
 .selected_item{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 25px;
+/*     font-size: 25px; */
+    font-size: 35px;
 }
 
 .plot_parameters {
     width: 35%;
-    height: 595px;
-    /* height: 0%; */
+/*     height: 595px; */
+    height: 1030px;
     float: left;
     background-color: blanchedalmond;
     font-family: Arial, Helvetica, sans-serif;
@@ -24,7 +25,8 @@ body {
 
 label {
     font-family: 'Courier New', Courier, monospace, bold;
-    font-size: 20px;
+/*     font-size: 20px; */
+    font-size: 35px;
 }
 
 option {
@@ -32,21 +34,8 @@ option {
     font-size: 15px;
     font-weight: bold;
 }
-/* 
-#Check1 {
-    margin-right: 300px;
-    display: inline-block
-}
 
-#Check2 {
-    margin-right: 200px;
-    display: inline-block
-}
 
-#Check3 {
-    margin-left: 100px;
-    display: inline-block
-} */
 
 table,
 th,
@@ -58,11 +47,14 @@ td {
     /* width: 80%; */
     text-align: center;
     text-decoration: underline;
+    font-size: 30px;    /*MANOS*/
 }
 
 th{
     background-color: rgb(0, 200, 100);
-    font-size: 18px;
+/*     font-size: 18px; */
+    font-size: 30px;    /*MANOS*/
+
 }
 
 tr{
@@ -77,12 +69,14 @@ tr{
 
 .button {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
+/*     font-size: 15px; */
+    font-size: 35px;
     font-weight: bold;
     background-color: blue; /* Green */
     color: white;
     padding: 15px 32px;
     text-align: center;
+    border-radius: 30px;
 }
 
 .button:hover{
@@ -94,7 +88,11 @@ tr{
 }
 
 .refresh{
-    margin-left: 29.5%;
-    margin-top: 27.5%;
+/*     margin-left: 29.5%; */
+    margin-left: 24%;
+/*     margin-left: auto; */
+/*     margin-right: auto; */
+/*     margin-top: 27.5%; */
+    margin-top: 32.6%;
     margin-right: auto;
 }

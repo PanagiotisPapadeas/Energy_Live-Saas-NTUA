@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 body{
-	background-color: aquamarine;
+	background-color: rgb(255, 224, 130);
 }
 
 
@@ -28,6 +28,7 @@ form {
 	margin: 5px; 
 	margin-left:auto; 
 	margin-right:auto; 
+	font-size: 25px;
 }
 
 .logintable1 {
@@ -40,6 +41,7 @@ form {
 	margin-right:auto; 
 	border: 2px solid gray; 
 	border-radius: 15px;
+	font-size: 25px;
 }
 
 .logintable2 {
@@ -80,34 +82,6 @@ input {
 	background-color: lightgreen;
 }
 
-
-/* #extend {
-	border: 1px solid darkgray;
-	border-radius: 5px;
-	padding: 5px; 
-	background-color: lightgray;
-}
-
-#extend:hover {
-	cursor: pointer;
-	background-color: lightgreen;
-}
-#cancel {
-	border: 1px solid darkgray;
-	border-radius: 5px;
-	padding: 5px; 
-	background-color: lightgray;
-}
-
-#cancel:hover {
-	cursor: pointer;
-	background-color: lightgreen;
-} */
-
-.checkOutput {
-	min-width: 150px;
-	font-weight: bold;
-}
 #back {
 	text-align: center;
 }
@@ -120,13 +94,6 @@ input {
 }
 
  /* Dropdown Button */
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
 
 
 .button {
@@ -137,11 +104,8 @@ input {
     color: white;
     padding: 15px 32px;
     text-align: center;
-    /* margin-left: 38%; */
-    /* text-decoration: double; */
-    /* display: inline-block; */
-    /* font-size: 16px;     */
-    /* margin: 0 auto; */
+	border-radius: 20px;
+	font-size: 35px;
 }
 
 .button:hover{

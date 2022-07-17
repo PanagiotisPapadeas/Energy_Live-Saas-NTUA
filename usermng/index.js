@@ -28,15 +28,16 @@ app.get("/", (req, res) => {
 		"dbconnection":"database saasusers not connected"
 	}
 
-// Check if connection was successful
-con.connect(function(err) {
-    if (err) {console.log("Not Connected!");
-        res.status(400).send(test2);}
-    else {
-        console.log("Connected!");
-    res.status(200).send(test);
+    // Check if connection was successful
+    con.connect(function(err) {
+        if (err) {console.log("Not Connected!");
+            res.status(400).send(test2);}
+        else {
+            console.log("Connected!");
+        res.status(200).send(test);
     }
-});
+    });
+    con.end()
 });
 
 app.get("/ins/:gmail/:fname/:lname", (req, res) => {
@@ -111,6 +112,7 @@ app.get("/upd/:gmail/:fname/:lname/:days", (req, res) => {
             res.send("success");
         });
     });
+    con.end();
 })
 
 app.get("/days/:gmail", (req, res) => {
@@ -136,4 +138,5 @@ app.get("/days/:gmail", (req, res) => {
 			res.send(result);
 		});
 	});
+    con.end();
 });

@@ -31,7 +31,7 @@ CREATE TABLE `Users` (
   `email` varchar(255) NOT NULL,
   `firstname` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
-  `daysleft` int(11) DEFAULT NULL
+  `daysleft` int(11) DEFAULT 30
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

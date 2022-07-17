@@ -6,7 +6,7 @@ function handleCredentialResponse(data) {
     console.log(data);
     // alert(data);
     fetchUserDetails(data["credential"])
-    window.location.assign("../Charts/Charts.html");
+    //window.location.assign("../Charts/Charts.html");
     window.location.assign("Charts.html");
 
 }
@@ -29,10 +29,12 @@ function fetchUserDetails(cred) {
             localStorage.setItem("given_name", parsedResponse["given_name"]);
             localStorage.setItem("family_name", parsedResponse["family_name"]);
             console.log(parsedResponse["given_name"])
-
+            var url = 'http://localhost:4006/ins/'+parsedResponse["email"]+'/'+parsedResponse["given_name"]+'/'+parsedResponse["family_name"];
+            fetch(url);
         }
     }
 
 
 }
+
 

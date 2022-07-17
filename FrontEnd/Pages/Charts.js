@@ -40,6 +40,7 @@ function addElement(){
 }
 
 let userId =  1;
+//testing
 function addFromWeb(){
     const url = 'https://jsonplaceholder.typicode.com/todos/'+ userId;
     //console.log("1");
@@ -52,6 +53,7 @@ function addFromWeb(){
     )
 }
 
+//get values from api microservices
 function addFromWeb1(){
     const date1 = document.querySelector('input[name=date1]').value;
     const date2 = document.querySelector('input[name=date2]').value;
@@ -60,6 +62,7 @@ function addFromWeb1(){
     const country = document.getElementById('country').value;
     const gen_type = document.getElementById('gen').value;
     console.log(quantity);
+    //url depending on quantity type
     if (quantity == "Actual total load")
     var url = 'http://localhost:4002/totalload/'+country+'/'+date1+'/'+date2+'/';
     else 

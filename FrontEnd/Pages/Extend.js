@@ -19,6 +19,7 @@ function back(){
 }
 
 let z = 0;
+//extend days and show new days remaining
 function extend(){
     var url1 = 'http://localhost:4006/days/'+localStorage.getItem("email");
     fetch(url1).then(response => response.json()).then(json => {
@@ -37,17 +38,9 @@ function extend(){
     })
     
 
-    /*fetch(url1).then(response => response.json()).then(json => {
-        document.getElementById("days_left").value = json[0].daysleft;
-        location.reload();
-    })*/
-    //alert(z);
-    //alert(x);
-    //var url = 'http://localhost:4006/upd/'+localStorage.getItem("email")+'/'+localStorage.getItem("given_name")+'/'+localStorage.getItem("family_name")+'/'+x;
-    //fetch(url);
-    //alert(localStorage.getItem("given_name"));
 }
 
+//set extend plan days to 0
 function cancel(){
     document.getElementById("days_left").value = 0;
     var url = 'http://localhost:4006/upd/'+localStorage.getItem("email")+'/'+localStorage.getItem("given_name")+'/'+localStorage.getItem("family_name")+'/0';

@@ -30,13 +30,17 @@ function extend(){
        // alert(z);
         var url = 'http://localhost:4006/upd/'+localStorage.getItem("email")+'/'+localStorage.getItem("given_name")+'/'+localStorage.getItem("family_name")+'/'+z;
         fetch(url);
+        fetch(url1).then(response => response.json()).then(json => {
+            document.getElementById("days_left").value = json[0].daysleft;
+            location.reload();
+        })
     })
     
 
-    fetch(url1).then(response => response.json()).then(json => {
+    /*fetch(url1).then(response => response.json()).then(json => {
         document.getElementById("days_left").value = json[0].daysleft;
         location.reload();
-    })
+    })*/
     //alert(z);
     //alert(x);
     //var url = 'http://localhost:4006/upd/'+localStorage.getItem("email")+'/'+localStorage.getItem("given_name")+'/'+localStorage.getItem("family_name")+'/'+x;

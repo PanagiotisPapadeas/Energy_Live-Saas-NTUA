@@ -11,8 +11,8 @@ app.listen(4003, function () {
 // Simply check the connection and return a relevant message
 app.get("/", (req, res) => {
     var mysql = require('mysql');
-	// Check database conection
 
+	// Check database conection
 		var con = mysql.createConnection({
 			host: "localhost",
 			user: "root",
@@ -74,5 +74,5 @@ app.get("/generation/:country_name/:generation_type/:date_from/:date_to", (req, 
 			res.send(test);
 		});
 	});
-	con.end(); // Don't forget to close the connection afterwards
+	// con.end(); // Don't forget to close the connection afterwards
 });

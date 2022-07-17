@@ -7,8 +7,6 @@ function handleCredentialResponse(data) {
     // alert(data);
     fetchUserDetails(data["credential"])
     //window.location.assign("../Charts/Charts.html");
-    window.location.assign("Charts.html");
-
 }
 
 function fetchUserDetails(cred) {
@@ -31,6 +29,7 @@ function fetchUserDetails(cred) {
             console.log(parsedResponse["given_name"])
             var url = 'http://localhost:4006/ins/'+parsedResponse["email"]+'/'+parsedResponse["given_name"]+'/'+parsedResponse["family_name"];
             fetch(url);
+            window.location.assign("Charts.html");
         }
     }
 

@@ -60,7 +60,7 @@ app.get("/ins/:gmail/:fname/:lname", (req, res) => {
         var days = 30;
 
         var insertStatement =
-        `INSERT IGNORE INTO users values(?, ?, ?, ?)`;
+        `INSERT IGNORE INTO Users values(?, ?, ?, ?)`;
 
         var items = [gmail, fname, lname, days];
 
@@ -69,7 +69,7 @@ app.get("/ins/:gmail/:fname/:lname", (req, res) => {
             (err, results, fields) => {
             if (err) {
                 console.log(
-                "Unable to insert item at row ", i + 1);
+                "Unable to insert item");
                 return console.log(err);
             }
             res.send("success");
@@ -97,7 +97,7 @@ app.get("/upd/:gmail/:fname/:lname/:days", (req, res) => {
         var days = req.params.days;
 
         var insertStatement =
-        `REPLACE INTO users values(?, ?, ?, ?)`;
+        `REPLACE INTO Users values(?, ?, ?, ?)`;
 
         var items = [gmail, fname, lname, days];
 
@@ -106,13 +106,14 @@ app.get("/upd/:gmail/:fname/:lname/:days", (req, res) => {
             (err, results, fields) => {
             if (err) {
                 console.log(
-                "Unable to insert item at row ", i + 1);
+                "Unable to insert item");
                 return console.log(err);
             }
             res.send("success");
         });
+        con.end();
     });
-    con.end();
+
 })
 
 app.get("/days/:gmail", (req, res) => {
@@ -131,12 +132,13 @@ app.get("/days/:gmail", (req, res) => {
 		if (err) throw err;
 		console.log("Connected!");
 		// Query to get the actual total load
-		let myquery = "SELECT daysleft from users where email ="+"'"+req.params.gmail+"'";
+		let myquery = "SELECT daysleft from Users where email ="+"'"+req.params.gmail+"'";
 		con.query(myquery, function (err, result, fields){
 			if (err) throw err;
 
 			res.send(result);
 		});
+        con.end();
 	});
-    con.end();
+
 });

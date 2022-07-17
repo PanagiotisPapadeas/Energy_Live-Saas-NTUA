@@ -11,6 +11,7 @@ app.listen(4002, function () {
 // Simply check the connection and return a relevant message
 app.get("/", (req, res) => {
     var mysql = require('mysql');
+
 	// Check database conection
     var con = mysql.createConnection({
 		host: "localhost",
@@ -69,5 +70,5 @@ app.get("/totalload/:country_name/:date_from/:date_to", (req, res) => {
 			res.send(test);
 		});
 	});
-	con.end(); // Don't forget to close the connection afterwards
+	// con.end(); // Don't forget to close the connection afterwards
 });

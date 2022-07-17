@@ -9,4 +9,4 @@ app.listen(4005, function () {
 console.log("listening on 4005");
 });
 
-app.use(express.static('SSO'));
+app.use(express.static('Pages'));

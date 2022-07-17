@@ -5,9 +5,10 @@ app.use(cors());
 
 // Listen on port 4002
 app.listen(4002, function () {
-console.log("listening on 4002");
+	console.log("Listening on port 4002");
 });
 
+// Simply check the connection and return a relevant message
 app.get("/", (req, res) => {
     var mysql = require('mysql');
 	// Check database conection
@@ -27,15 +28,16 @@ app.get("/", (req, res) => {
 		"dbconnection":"database saasdb2 not connected"
 	}
 
-// Check if connection was successful
-con.connect(function(err) {
-    if (err) {console.log("Not Connected!");
-        res.status(400).send(test2);}
-    else {
-        console.log("Connected!");
-    res.status(200).send(test);
-    }
-});
+	// Check if connection was successful, otherwise print any errors that occured
+	con.connect(function(err) {
+		if (err) {console.log("Not Connected! " + err.toString());
+			res.status(400).send(test2);}
+		else {
+			console.log("Connected!");
+			res.status(200).send(test);
+		}
+	});
+	con.end(); // Don't forget to close the connection afterwards
 });
 
 app.get("/totalload/:country_name/:date_from/:date_to", (req, res) => {
@@ -67,4 +69,5 @@ app.get("/totalload/:country_name/:date_from/:date_to", (req, res) => {
 			res.send(test);
 		});
 	});
+	con.end(); // Don't forget to close the connection afterwards
 });

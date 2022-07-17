@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    image: mariadb:latest
+    restart: unless-stopped
+    environment:
+      - MYSQL_USER: root
+      - MYSQL_ROOT_PASSWORD: panoplos  
+      - MYSQL_DATABASE: saasdb1
+  web:
+    depends_on:
+    - db
+    build: .
+    volumes:
+    - .:/usr/app
+    - /usr/app/node_modules
+    ports: 
+    - 4003:4003
+  

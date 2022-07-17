@@ -20,6 +20,3 @@ consumer1().catch((err) => {
 consumer2().catch((err) => {
 	console.error("error in consumer2: ", err)
 })
-
-
-

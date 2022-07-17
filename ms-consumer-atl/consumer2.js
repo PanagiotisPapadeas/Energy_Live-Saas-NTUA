@@ -86,5 +86,5 @@ const consume2 = async () => {
 	})
 }
 
-// Export module for index-db.js
+// Export module for index.js
 module.exports = consume2

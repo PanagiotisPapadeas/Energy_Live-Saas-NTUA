@@ -5,37 +5,43 @@ app.use(cors());
 
 // Listen on port 4003
 app.listen(4003, function () {
-console.log("listening on 4003");
+	console.log("Listening on port 4003");
 });
 
+// Simply check the connection and return a relevant message
 app.get("/", (req, res) => {
     var mysql = require('mysql');
 	// Check database conection
-    var con = mysql.createConnection({
-		host: "localhost",
-		user: "root",
-		password: "panoplos",
-		database:"saasdb1"
-	});
 
-    var test = {
-        "status":"OK",
-		"dbconnection":"database saasdb1 connected"
-	}
-	var test2 = {
-		"status":"failed",
-		"dbconnection":"database saasdb1 not connected"
-	}
+		var con = mysql.createConnection({
+			host: "localhost",
+			user: "root",
+			password: "panoplos",
+			database:"saasdb1"
+		});
 
-// Check if connection was successful
-con.connect(function(err) {
-    if (err) {console.log("Not Connected!");
-        res.status(400).send(test2);}
-    else {
-        console.log("Connected!");
-    res.status(200).send(test);
-    }
-});
+		var test = {
+			"status":"OK",
+			"dbconnection":"database saasdb1 connected"
+		}
+		var test2 = {
+			"status":"failed",
+			"dbconnection":"database saasdb1 not connected"
+		}
+
+		// Check if connection was successful, otherwise print any errors that occured
+		con.connect(function(err) {
+			if (err) {
+				console.log("Not Connected! " + err.toString());
+				res.status(400).send(test2);
+			}
+			else {
+				console.log("Connected!");
+				res.status(200).send(test);
+			}
+		});
+
+	con.end(); // Don't forget to close the connection afterwards
 });
 
 app.get("/generation/:country_name/:generation_type/:date_from/:date_to", (req, res) => {
@@ -68,4 +74,5 @@ app.get("/generation/:country_name/:generation_type/:date_from/:date_to", (req, 
 			res.send(test);
 		});
 	});
+	con.end(); // Don't forget to close the connection afterwards
 });

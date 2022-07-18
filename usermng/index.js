@@ -9,6 +9,7 @@ app.listen(4006, function () {
 console.log("listening on 4006");
 });
 
+//check connectivity with db
 app.get("/", (req, res) => {
     var mysql = require('mysql');
 	// Check database conection
@@ -130,11 +131,10 @@ app.get("/days/:gmail", (req, res) => {
 
 	// JSON object to return
 
-    //get total load
 	con.connect(function(err) {
 		if (err) throw err;
 		console.log("Connected!");
-		// Query to get the actual total load
+		// Query to get remaining days
 		let myquery = "SELECT daysleft from Users where email ="+"'"+req.params.gmail+"'";
 		con.query(myquery, function (err, result, fields){
 			if (err) throw err;

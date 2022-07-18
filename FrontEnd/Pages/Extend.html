@@ -3,6 +3,7 @@
 
 <head>
 
+	<!-- Prevents user from going back with browser's arrow -->
 	<script type="text/javascript">
 		function preventBack() {
 			window.history.forward();
@@ -60,7 +61,8 @@
 				<input type="text" id="days_left" readonly>
 			</td>
 			<td>
-				<input type="number" id="extend_days" min="0" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
+				<input type="number" id="extend_days" min="0"
+					onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))">
 			</td>
 		</tr>
 	</table>
@@ -72,7 +74,8 @@
 				<div class="button" onclick="extend()" style="margin-right: 190px;">Extend Plan</div>
 			</td>
 			<td>
-				<div class="button" onclick="cancel()" style="margin-left: 120px; margin-right: 120px;">Cancel Plan</div>
+				<div class="button" onclick="cancel()" style="margin-left: 120px; margin-right: 120px;">Cancel Plan
+				</div>
 			</td>
 			<td>
 				<div class="button" onclick="back()" style="margin-left: 190px;">Return Back</div>
